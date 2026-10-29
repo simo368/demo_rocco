@@ -37,10 +37,7 @@ export const LIMITS = {
 };
 
 export const BUILTIN_IMAGES = [
-  { ref: "assets/hero-editorial.png", label: "Original hero photograph" },
-  { ref: "sprite:0", label: "Original product panel 1" },
-  { ref: "sprite:1", label: "Original product panel 2" },
-  { ref: "sprite:2", label: "Original product panel 3" }
+  { ref: "assets/hero-editorial.png", label: "Original hero photograph" }
 ];
 
 export const DEFAULT_SITE = {
@@ -109,8 +106,4 @@ export const DEFAULT_SITE = {
   }
 };
 
-export const DEFAULT_PRODUCTS = [
-  { slug: "product-01", name: "Product 01", description: "Product details and availability will be added before release.", images: ["sprite:0"], focal: { x: 50, y: 45 }, price: null, currency: "EUR", availability: "coming-soon", status: "published", sortOrder: 1 },
-  { slug: "product-02", name: "Product 02", description: "Product details and availability will be added before release.", images: ["sprite:1"], focal: { x: 50, y: 45 }, price: null, currency: "EUR", availability: "coming-soon", status: "published", sortOrder: 2 },
-  { slug: "product-03", name: "Product 03", description: "Product details and availability will be added before release.", images: ["sprite:2"], focal: { x: 50, y: 45 }, price: null, currency: "EUR", availability: "coming-soon", status: "published", sortOrder: 3 }
-];
+export const DEFAULT_PRODUCTS = [];

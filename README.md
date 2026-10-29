@@ -82,7 +82,7 @@ The security rules enforce:
 - **Zero build toolchain:** Pure native ES modules and standard CSS.
 - **Dynamic content fallback:** If Firebase is not yet configured, the site automatically renders clean built-in fallback content (`js/defaults.js`).
 - **Live Draft Preview:** Append `?preview=1` to any page to view unpublished draft changes directly in context.
-- **Product detail routing:** Clean URLs via `product.html?slug=<handle>` with legacy redirects (`product-01.html`, etc.).
+- **Product detail routing:** Dynamic routing via `product.html?slug=<handle>` for all catalog items created in the CMS.
 - **Newsletter subscription:** Submits to the `signups` collection with client-side rate-limiting and validation.
 - **Accessibility & Motion:** Automatically honors system `prefers-reduced-motion` settings.
 

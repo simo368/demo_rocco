@@ -1,5 +1,5 @@
 import { h, normalizeProduct, slugify, formatPrice, clone } from "../js/shared.js";
-import { AVAILABILITY, CURRENCIES, DEFAULT_PRODUCTS } from "../js/defaults.js";
+import { AVAILABILITY, CURRENCIES } from "../js/defaults.js";
 import { state } from "./state.js";
 import { toast, describeError, confirmDialog, withBusy, textField, selectField, section, row } from "./ui.js";
 import { imageField, focalEditor, pickImage, thumbFor } from "./media.js";
@@ -51,16 +51,12 @@ export async function productsView(root, edit) {
         try { await withBusy(e.target, () => state.backend.deleteProduct(p.id)); toast("Product deleted."); await reload(); } catch (err) { toast(describeError(err), "error"); }
       } }, "Delete"))));
 
-  const importBtn = !state.products.length ? h("button", { type: "button", class: "btn", onclick: async (e) => {
-    try { await withBusy(e.target, async () => { for (const p of DEFAULT_PRODUCTS) await state.backend.saveProduct(null, p); }); toast("Original products imported."); await reload(); } catch (err) { toast(describeError(err), "error"); }
-  } }, "Import the 3 original products") : null;
-
   root.replaceChildren(
     h("div", { class: "page-head" }, h("div", {}, h("h1", {}, "Products"),
       h("p", { class: "hint" }, "Only “Published” products appear on the public site. Purchase and checkout controls stay hidden until a commerce integration is connected.")),
       h("a", { class: "btn btn--primary", href: "#products/new" }, "New product")),
     h("div", { class: "tabs", role: "tablist" }, ["active", "archived"].map((t) => h("button", { type: "button", role: "tab", "aria-selected": String(tab === t), class: "tab", onclick: () => { tab = t; reload(); } }, t === "active" ? `Active (${active.length})` : `Archived (${state.products.length - active.length})`))),
-    list.length ? h("ul", { class: "list" }, items) : h("div", { class: "empty" }, h("p", {}, tab === "active" ? "No products yet." : "Nothing archived."), importBtn));
+    list.length ? h("ul", { class: "list" }, items) : h("div", { class: "empty" }, h("p", {}, tab === "active" ? "No products yet. Click “New product” to add one." : "Nothing archived.")));
 }
 
 const nextOrder = () => Math.max(0, ...state.products.map((p) => p.sortOrder)) + 1;
