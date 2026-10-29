@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="is-loading">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,86 +7,12 @@
     <meta name="description" content="A minimal preview for an independent fashion label. First collection coming soon.">
     <title>Brand Name — First Collection</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
+    <script type="module" src="app.js"></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header" id="top">
-      <a class="wordmark" href="#home" aria-label="Brand Name, home">BRAND NAME</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="menu-toggle__label">Menu</span>
-        <span class="menu-toggle__icon" aria-hidden="true"></span>
-      </button>
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#updates">Info / Updates</a>
-        <a href="#about">About Us</a>
-        <a href="#join">Join</a>
-      </nav>
-    </header>
-
-    <main id="main">
-      <div class="opening-scene">
-        <div class="opening-backdrop" aria-hidden="true">
-          <img class="hero__image" src="assets/hero-editorial.png" alt="">
-          <div class="hero__shade"></div>
-        </div>
-        <section class="hero" id="home" aria-labelledby="hero-title">
-          <div class="hero__copy">
-            <p class="eyebrow">First collection</p>
-            <h1 id="hero-title">Coming soon.</h1>
-          </div>
-          <a class="hero__scroll" href="#products" aria-label="Explore products">
-            <span aria-hidden="true">↓</span>
-          </a>
-        </section>
-
-        <section class="products" id="products" aria-label="The first release">
-          <div class="products__inner">
-            <div class="product-book" id="product-book" aria-live="polite"></div>
-          </div>
-        </section>
-      </div>
-
-      <section class="intro section-wrap" id="about" aria-labelledby="about-title">
-        <p class="eyebrow">About us</p>
-        <div class="intro__body">
-          <h2 id="about-title">A clothing label in the making.</h2>
-          <p>The first collection is being prepared. A short introduction to the people and point of view behind the brand will be added here.</p>
-        </div>
-      </section>
-
-      <section class="updates" id="updates" aria-labelledby="updates-title">
-        <div class="updates__inner">
-          <p class="eyebrow">Info / Updates</p>
-          <div class="updates__row">
-            <h2 id="updates-title">Drop 01</h2>
-            <p class="updates__status"><span class="status-dot" aria-hidden="true"></span> Coming soon</p>
-          </div>
-          <p class="updates__copy">Release details will be shared here.</p>
-        </div>
-      </section>
-
-      <section class="join section-wrap" id="join" aria-labelledby="join-title">
-        <div class="join__copy">
-          <p class="eyebrow">Join</p>
-          <h2 id="join-title">Be first to know.</h2>
-        </div>
-        <form class="signup" id="signup-form">
-          <label class="visually-hidden" for="email">Email address</label>
-          <input id="email" name="email" type="email" placeholder="Email address" autocomplete="email" required>
-          <button type="submit">Join <span aria-hidden="true">↗</span></button>
-          <p class="signup__note" id="signup-note" aria-live="polite">Preview only. Email sign-up will be connected before launch.</p>
-        </form>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <a class="wordmark" href="#top">BRAND NAME</a>
-      <p>© <span id="year">2026</span> Brand Name</p>
-      <a class="back-to-top" href="#top">Back to top ↑</a>
-    </footer>
+    <div id="app">
+      <p class="loading-note" role="status">Loading…</p>
+      <noscript><p class="loading-note">This site needs JavaScript enabled to display its content.</p></noscript>
+    </div>
   </body>
 </html>

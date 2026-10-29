@@ -1,4 +1,13 @@
+# OS metadata
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Environment and secrets (if added in future)
+.env
+.env.local
+*.log
+
+# Editor directories
 .vscode/
 .idea/
